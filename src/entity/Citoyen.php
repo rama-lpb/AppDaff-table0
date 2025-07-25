@@ -8,16 +8,16 @@ class Citoyen extends AbstractEntity{
     private int $id ;
     private string $nom;
     private string $prenom;
-    private string $numerocni;
+    private string $numero_cni;
     private string $photoIdentite;
     private string $lieuNaiss;
     private string $dateNaiss;
 
-    public function __construct($id = 0, $nom = '', $prenom = '', $numerocni= '', $photoIdentite = '', $lieuNaiss = '', $dateNaiss = ''){
+    public function __construct($id = 0, $nom = '', $prenom = '', $numero_cni= '', $photoIdentite = '', $lieuNaiss = '', $dateNaiss = ''){
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
-        $this->numerocni = $numerocni;
+        $this->numero_cni = $numero_cni;
         $this->photoIdentite = $photoIdentite;
         $this->lieuNaiss = $lieuNaiss;
         $this->dateNaiss = $dateNaiss;
@@ -85,21 +85,21 @@ class Citoyen extends AbstractEntity{
     }
 
     /**
-     * Get the value of numerocni
+     * Get the value of numero_cni
      */ 
-    public function getNumerocni()
+    public function getnumero_cni()
     {
-        return $this->numerocni;
+        return $this->numero_cni;
     }
 
     /**
-     * Set the value of numerocni
+     * Set the value of numero_cni
      *
      * @return  self
      */ 
-    public function setNumerocni($numerocni)
+    public function setnumero_cni($numero_cni)
     {
-        $this->numerocni = $numerocni;
+        $this->numero_cni = $numero_cni;
 
         return $this;
     }
@@ -169,7 +169,7 @@ class Citoyen extends AbstractEntity{
             $data['id'],
             $data['nom'],
             $data['prenom'],
-            $data['numerocni'],
+            $data['numero_cni'],
             $data['photoidentite'],
             $data['lieunaiss'],
             $data['datenaiss']
@@ -181,7 +181,7 @@ class Citoyen extends AbstractEntity{
             'id' => $this->id,
             'nom' => $this->nom,
             'prenom' => $this->prenom,
-            'numerocni' => $this->numerocni,
+            'numero_cni' => $this->numero_cni,
             'photoidentite' => $this->photoIdentite,
             'lieunaiss' => $this->lieuNaiss,
             'datenaiss' => $this->dateNaiss
