@@ -9,4 +9,4 @@ $dotenv->load();
 define('DB_USER', $_ENV['DB_USER']);
 define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 define('APP_URL', $_ENV['APP_URL']);
-define('dsn', $_ENV['dsn'] );
+define('DSN', $_ENV['DSN'] );

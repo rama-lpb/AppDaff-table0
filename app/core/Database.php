@@ -28,7 +28,7 @@ class Database{
 
            
             $this->connection = new PDO(
-             dsn,
+             DSN,
               DB_USER,
               DB_PASSWORD,
               [
