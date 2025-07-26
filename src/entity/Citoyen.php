@@ -12,8 +12,9 @@ class Citoyen extends AbstractEntity{
     private string $photoIdentite;
     private string $lieuNaiss;
     private string $dateNaiss;
+    private string $telephone;
 
-    public function __construct($id = 0, $nom = '', $prenom = '', $numero_cni= '', $photoIdentite = '', $lieuNaiss = '', $dateNaiss = ''){
+    public function __construct($id = 0, $nom = '', $prenom = '', $numero_cni= '', $photoIdentite = '', $lieuNaiss = '', $dateNaiss = '', $telephone = ''){
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -21,6 +22,7 @@ class Citoyen extends AbstractEntity{
         $this->photoIdentite = $photoIdentite;
         $this->lieuNaiss = $lieuNaiss;
         $this->dateNaiss = $dateNaiss;
+        $this->telephone = $telephone;
     }
 
 
@@ -164,6 +166,19 @@ class Citoyen extends AbstractEntity{
         return $this;
     }
 
+    // Getter
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    // Setter
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+        return $this;
+    }
+
     public static function toObject($data):static{
         return  new static(
             $data['id'],
@@ -172,7 +187,8 @@ class Citoyen extends AbstractEntity{
             $data['numero_cni'],
             $data['photoidentite'],
             $data['lieunaiss'],
-            $data['datenaiss']
+            $data['datenaiss'],
+            $data['telephone'] ?? ''
         );
     }
 
@@ -184,7 +200,8 @@ class Citoyen extends AbstractEntity{
             'numero_cni' => $this->numero_cni,
             'photoidentite' => $this->photoIdentite,
             'lieunaiss' => $this->lieuNaiss,
-            'datenaiss' => $this->dateNaiss
+            'datenaiss' => $this->dateNaiss,
+            'telephone' => $this->telephone
         ];
     }
 }
